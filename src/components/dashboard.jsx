@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import logo from "./../logo.png";
 import Bookings from "./bookings";
+import Guests from "./guests";
+import Employee from "./employee";
+import Rooms from "./rooms";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Dashboard extends Component {
@@ -75,15 +78,15 @@ class Dashboard extends Component {
                 </li>
 
                 <li>
-                  <a href="#">
-                    <i className="fa fa-globe fa-lg"></i> Rooms{" "}
-                  </a>
+                <Link className="nav-link" to={"/rooms"}>
+                    Rooms
+                  </Link>
                 </li>
 
                 <li>
-                  <a href="#">
-                    <i className="fa fa-car fa-lg"></i> Employees{" "}
-                  </a>
+                <Link className="nav-link" to={"/employee"}>
+                    Employees
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -91,7 +94,10 @@ class Dashboard extends Component {
           <div className="col-md-9 offset-3">
           <Switch>
             <Route exact path='/bookings' component={Bookings} />
-            {/* <Route exact path='/guests' component={Guests} /> */}
+            <Route exact path='/guests' component={Guests} />
+            <Route exact path='/employee' component={Employee} />
+            <Route exact path='/rooms' component={Rooms} /> 
+ 
 
           </Switch>
           </div>

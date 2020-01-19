@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 class Bookings extends Component {
     state = { 
         bookings: [
@@ -13,6 +14,8 @@ class Bookings extends Component {
             
         ]
      }
+
+     
 
      componentDidMount = () => {
         console.log('mounted');
