@@ -4,8 +4,8 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from './logo.png';
 import Login from "./login-component.js";
-import Footer from "./footer.js";
-import { logDOM } from '@testing-library/dom';
+// import Footer from "./footer.js";
+// import { logDOM } from '@testing-library/dom';
 
 
 function App() {

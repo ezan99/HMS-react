@@ -4,6 +4,7 @@ import Bookings from "./bookings";
 import Guests from "./guests";
 import Employee from "./employee";
 import Rooms from "./rooms";
+import CreateBooking from './createBooking';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class Dashboard extends Component {
@@ -55,7 +56,7 @@ class Dashboard extends Component {
 
           <div className="nav-side-menu">
             <div className="brand pb-2 pt-2">
-              <img src={logo} width="75" />
+              <img src={logo} width="75" alt="Logo" />
             </div>
             <i
               className="fa fa-bars fa-2x toggle-btn"
@@ -65,11 +66,21 @@ class Dashboard extends Component {
 
             <div className="menu-list">
               <ul id="menu-content" className="menu-content collapse out">
-                <li>
-                  <Link className="nav-link" to={"/bookings"}>
-                    Bookings
-                  </Link>
+                <li data-toggle="collapse" data-target="#bookings" className="collapsed active">
+                  <a href="#"> Bookings </a>
                 </li>
+                <ul className="sub-menu collapse" id="bookings">
+                    <li className="active">                  
+                      <Link className="nav-link" to={"/bookings"}>
+                        Show Bookings
+                      </Link>
+                    </li>
+                    <li className="active">                  
+                      <Link className="nav-link" to={"/createbooking"}>
+                        Book Now<span className="arrow"></span>
+                      </Link>
+                    </li>
+                </ul>
 
                 <li>
                 <Link className="nav-link" to={"/guests"}>
@@ -91,14 +102,13 @@ class Dashboard extends Component {
               </ul>
             </div>
           </div>
-          <div className="col-md-9 offset-3">
+          <div className="col-md-10 offset-2">
           <Switch>
             <Route exact path='/bookings' component={Bookings} />
             <Route exact path='/guests' component={Guests} />
             <Route exact path='/employee' component={Employee} />
             <Route exact path='/rooms' component={Rooms} /> 
- 
-
+            <Route exact path='/createbooking' component={CreateBooking} /> 
           </Switch>
           </div>
         </Router>
